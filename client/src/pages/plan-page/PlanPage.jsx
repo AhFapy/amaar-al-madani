@@ -6,13 +6,13 @@ import GoldImg from "../../assets/gold-img.jpg"
 
 function PlanPage(props) {
   function redirectToBronze() {
-    window.location.href = "https://checkout.stripe.com/c/pay/cs_live_a1hlUWsfEuh5ztaIqrlCZ5h0R1teVeJ1bGzblTvLjFYKCuEcFJxxZr2KO1#fidkdWxOYHwnPyd1blppbHNgWjA0S2EzN0NBYGZkSzRHSm1vVjJ8XVFOVk1yT2I2UFZiTk5WS1dQRkthZjJ3XUJNbUlPYEwzb1NnS09IXWQ3M1RUUV1jdFw8QU1yaDYwYF1PVlVyMHxMdzQyNTVhVnRWM0xDQCd4JSUl"
+    window.location.href = "https://pool-stop-378.notion.site/Leo-s-Lion-Teamspace-e97e36de437547a3b2c0421992fb12df?pvs=4"
   }
   function redirectToSilver() {
-    window.location.href = "https://checkout.stripe.com/c/pay/cs_live_a1duRzyRntdOtRieJa9t0DDrah2tocFF3xQ8PHxp9NH18Ko3kDclIIZ4hN#fidkdWxOYHwnPyd1blppbHNgWjA0S2EzN0NBYGZkSzRHSm1vVjJ8XVFOVk1yT2I2UFZiTk5WS1dQRkthZjJ3XUJNbUlPYEwzb1NnS09IXWQ3M1RUUV1jdFw8QU1yaDYwYF1PVlVyMHxMdzQyNTVhVnRWM0xDQCd4JSUl"
+    window.location.href = "https://buy.stripe.com/bIYcP7aXjeBj8aQ8wx"
   }
   function redirectToGold() {
-    window.location.href = "https://checkout.stripe.com/c/pay/cs_live_a1WZcTOWNFVzIDM0hK9v0IizTuWYU0lI5gTxl4BEyROMzMNHkrVefYbsaK#fidkdWxOYHwnPyd1blppbHNgWjA0S2EzN0NBYGZkSzRHSm1vVjJ8XVFOVk1yT2I2UFZiTk5WS1dQRkthZjJ3XUJNbUlPYEwzb1NnS09IXWQ3M1RUUV1jdFw8QU1yaDYwYF1PVlVyMHxMdzQyNTVhVnRWM0xDQCd4JSUl"
+    window.location.href = "https://buy.stripe.com/fZecP78PbeBjaiY8ww"
   }
 
 
@@ -36,8 +36,8 @@ function PlanPage(props) {
         {props.plan === "GOLD" ? <span className='span-plan-info'>Premium Level Lions Coaching Bundle</span> : ""}
         <div className='stripe-btn-div'>
         {props.plan === "BRONZE" ? <button onClick={redirectToBronze} className='stripe-btn'>Subscribe</button> : ""}
-        {props.plan === "SILVER" ? <button onClick={redirectToSilver} className='stripe-btn'>Start Trial</button> : ""}
-        {props.plan === "GOLD" ? <button onClick={redirectToGold} className='stripe-btn'>Start Trial</button> : ""}
+        {props.plan === "SILVER" ? <button onClick={redirectToSilver} className='stripe-btn'>Start Now</button> : ""}
+        {props.plan === "GOLD" ? <button onClick={redirectToGold} className='stripe-btn'>Start Now</button> : ""}
         </div>
         </div>
       </div>

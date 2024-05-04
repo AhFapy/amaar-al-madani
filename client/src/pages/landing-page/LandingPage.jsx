@@ -28,6 +28,7 @@ import footLion from "../../assets/plan-imgs/foot-lion.jpg"
 import playIcon from "../../assets/plan-imgs/play-icon.png"
 import goldContract from "../../assets/plan-imgs/gold-contract.jpg"
 import fullAccess from "../../assets/plan-imgs/full-access.jpg"
+import navLogo from "../../assets/nav-logo.jpg"
 
 
 function LandingPage() {
@@ -84,7 +85,7 @@ useEffect(() => {
     <div className='lp-wrapper'>
       <nav>
         <div className='nav-left'>
-          <span className='nav-span'>Become The King Of The Jungle</span>
+          <img className='nav-img' src={navLogo}></img>
         </div>
 
         <div className='nav-right'>
@@ -92,10 +93,12 @@ useEffect(() => {
 
       </nav>
       <div className='lp-header'>
-          <span className='header-text'>LEO'S LIONS<br/> DEN</span>
-          <span className='under-header-text'>JOIN THE PACK & BECOME THE KING OF THE JUNGLE.</span>
+          <span className='header-text'>Islam from <span className='header-text blue-shadow'>ﺍ</span> to <span className='header-text blue-shadow'>ي</span></span>
+          <span className='under-header-text'>Our Learning Program will Guide You on Every Step of the Way, no matter where you start.</span>
       </div>
+      
       <div className='under-header'>
+      <span className='blue-shadow'>(Scroll Down If You're Serious On Your Deen).</span>
         <div className='scroll-down' onClick={scrollDown}>
             <motion.dev 
             animate={{
@@ -113,13 +116,13 @@ useEffect(() => {
     </div>
 
     <div className='first-cta-wrapper'>
-      <span className='header-text'>Select Your Rank</span>
+      <span className='header-text'>Select Your Tier</span>
       <div className='img-wrapper'>
       <div className='img-div'>
       <Tilt options={defaultOptions} className="tilt-box">
         <img className='img bronze-img' onClick={() => redirectToPlan("bronze")} src={bronzeImg}/>
       </Tilt>
-      <span className='advantages-span bronze-text'>Bronze</span>
+      <span className='advantages-span'>Tier 1</span>
         {bronzeData.map(info => <span className='bronze-text bronze-span'>{info}<br/></span>)}
         <button className='plan-btn bronze-btn' onClick={() => redirectToPlan("bronze")}>See Plan</button>
       </div>
@@ -200,7 +203,7 @@ useEffect(() => {
   <div className='foot-content-div column'>
   <video className='foot-vid' controls src={footVideo}></video>
 
-  <span className='foot-span-2'> <span className='foot-span-2-gold'>OR</span> <br/><br/><span className='join-me-size'>JOIN ME</span> <br/> & <br/> <span className='foot-span-2-gold'><span className='join-me-size'>NEVER</span><br/><br/> BE THE SAME AGAIN</span></span>
+  <span className='foot-span-2'> <br/><span className='foot-span-2-gold OR-span'>OR</span> <br/><br/><br/><span className='join-me-size'>JOIN ME</span> <br/> & <br/> <span className='foot-span-2-gold'><span className='join-me-size'>NEVER</span><br/><br/> BE THE SAME AGAIN</span></span>
   <img className='lion-img' src={footLion}></img>
   <span className='refund-span'>100% FULL REFUND if you don't achieve your trimestral Goals & Not Happy with the Product (I know it won't happen that's why I'm betting on it)</span><br/><br/>
   <span className='vid-span'>My Purpose:</span>
@@ -211,7 +214,7 @@ useEffect(() => {
       <button style={{backgroundColor: "white"}} onClick={() => redirectToCourse()}>course</button> 
       <div style={{ minWidth: '320px', height: '700px' }}>
       <div className="calendly-inline-widget"
-      data-url="https://calendly.com/leo-matiano?hide_gdpr_banner=1&background_color=1a1a1a&text_color=f9ee08&primary_color=ffbf00"
+      data-url="https://calendly.com/leo-matiano/coaching-fit-call"
       style={{ minWidth: '320px', height: '700px' }}
     />
     </div>
