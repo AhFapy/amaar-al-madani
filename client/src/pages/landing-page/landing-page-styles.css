@@ -116,8 +116,7 @@ nav {
 
 .advantages-span {
     font-size: 5rem;
-    color: gold;
-    text-shadow: 0 0 5px black;
+    color: white;
     font-weight: bolder;
     font-family: Poppins;
     font-weight: 500;
@@ -339,7 +338,6 @@ nav {
         margin-right: 2.5rem;
         margin-bottom: 2.5rem;
         margin-top: 2.5rem;
-        box-shadow: 0px 0px 50px gold;
 }
 
 .gold-showcase-div {
@@ -357,9 +355,9 @@ nav {
 }
 
 .showcase-text {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
-    color: gold;
+    color: white;
     text-align: center;
 }
 
@@ -561,6 +559,36 @@ nav {
 .OR-span {
     font-size: 7.5rem;
 }
+
+.img-tilt {
+    width: 4rem; /* Equivalente a w-16 */
+    height: 4rem; /* Equivalente a h-16 */
+    object-fit: contain; /* Equivalente a object-contain */  
+    background-color: white;
+}
+
+.h3-tilt {
+    color: white; /* Equivalente a text-white */
+    font-size: 20px; /* Equivalente a text-[20px] */
+    font-weight: bold; /* Equivalente a font-bold */
+    text-align: center; /* Equivalente a text-center */  
+}
+
+.tilt-container {
+    background-color: black/* color de fondo deseado */;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding-top: 1.25rem; /* 5/4 de rem */
+    padding-bottom: 1.25rem; /* 5/4 de rem */
+    padding-left: 1.5rem; /* 12/16 de rem */
+    padding-right: 1.5rem; /* 12/16 de rem */
+    min-height: 280px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  
 
 @keyframes fadeIn {
     from {

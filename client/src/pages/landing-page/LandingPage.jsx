@@ -17,18 +17,17 @@ import image6 from "../../assets/plan-imgs/f.jpg"
 import image7 from "../../assets/plan-imgs/g.jpg"
 import image8 from "../../assets/plan-imgs/h.jpg"
 import callsImg from "../../assets/plan-imgs/calls.jpg"
+import calls from "../../assets/plan-imgs/calls.png"
 import gameplanImg from "../../assets/plan-imgs/gameplan.jpg"
-import dailyCommunicationImg from "../../assets/plan-imgs/daily-communication.jpg"
+import tajweed from "../../assets/plan-imgs/tajweed.png"
 import foot1 from "../../assets/plan-imgs/foot-1.jpg"
 import foot2 from "../../assets/plan-imgs/foot-2.jpg"
 import foot3 from "../../assets/plan-imgs/foot-3.jpg"
 import foot4 from "../../assets/plan-imgs/foot-4.jpg"
 import footVideo from "../../assets/plan-imgs/foot-ivd.mp4"
 import footLion from "../../assets/plan-imgs/foot-lion.jpg"
-import playIcon from "../../assets/plan-imgs/play-icon.png"
-import goldContract from "../../assets/plan-imgs/gold-contract.jpg"
-import fullAccess from "../../assets/plan-imgs/full-access.jpg"
 import navLogo from "../../assets/nav-logo.jpg"
+import {fadeIn} from "../../utils/motion"
 
 
 function LandingPage() {
@@ -118,67 +117,41 @@ useEffect(() => {
     <div className='first-cta-wrapper'>
       <span className='header-text'>Select Your Tier</span>
       <div className='img-wrapper'>
-      <div className='img-div'>
-      <Tilt options={defaultOptions} className="tilt-box">
-        <img className='img bronze-img' onClick={() => redirectToPlan("bronze")} src={bronzeImg}/>
-      </Tilt>
-      <span className='advantages-span'>Tier 1</span>
-        {bronzeData.map(info => <span className='bronze-text bronze-span'>{info}<br/></span>)}
-        <button className='plan-btn bronze-btn' onClick={() => redirectToPlan("bronze")}>See Plan</button>
-      </div>
-      <div className='img-div'>
-      <Tilt options={defaultOptions} className="tilt-box">
-        <img className='img silver-img' onClick={() => redirectToPlan("silver")} src={silverImg}/>
-      </Tilt>
-      <span className='advantages-span silver-text'>Silver</span>
-      <span className='advantages-span silver-text'>Unlock All These Courses</span>
-      <div className='plan-img-wrapper'>
-      <img className='plan-img' src={image1}></img>
-      <img className='plan-img' src={image2}></img>
-      <img className='plan-img' src={image3}></img>
-      </div>
-      <div className='plan-img-wrapper'>
-      <img className='plan-img' src={image4}></img>
-      <img className='plan-img' src={image5}></img>
-      <img className='plan-img' src={image6}></img>
-      </div>
-      <div className='plan-img-wrapper'>
-      <img className='plan-img' src={image7}></img>
-      <img className='plan-img' src={image8}></img>
-      </div>
-      <div className='silver-prices'>
-          <span><span className='silver-prices-span'><b>99x4 + 49x4 = </b></span><span className='silver-prices-subtext'>592€</span></span><br/><br/>
-        </div>
-      <span className='under-header-text silver-price-span'>FOR ONLY A 1 TIME FEE OF 129€!</span>
-
-        <button className='plan-btn silver-btn' onClick={() => redirectToPlan("silver")}>See Plan</button>
-      </div>
       <div className='img-div' >
-      <Tilt options={defaultOptions} className="tilt-box">
-        <img className='img gold-img' onClick={() => redirectToPlan("gold")} src={goldImg}/>
-      </Tilt>
-      <span className='advantages-span gold-text'><b>LEO'S LIONS COACHING</b></span>
-      <span className='advantages-span gold-text'>Gold</span>
+      <span className='advantages-span'>Tier 1</span>
         <div className='gold-showcase-div'>
-          <img className='gold-plan-img' src={callsImg}></img>
-          <span className='showcase-text'>1-1 Coaching Calls</span>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img' src={callsImg}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Professional Quran lessons by knowledgeable Teachers</span>
         </div>
         <div className='gold-showcase-div reverse'>
-        <img className='gold-plan-img' src={dailyCommunicationImg}></img>
-          <span className='showcase-text'>Daily Communication</span>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img' src={tajweed}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Full tajweed (Correct Pronunciation) course</span>
         </div>
-        <div className='gold-showcase-div '>
-        <img className='gold-plan-img' src={gameplanImg}></img>
-          <span className='showcase-text'>Personalised Gameplan</span>
+    <Tilt className="xs:w-[250px] w-full">
+      <motion.div 
+      variants={fadeIn("right", "spring", 0.5 * 1, 0.75)}
+      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      >
+        <div 
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+        className='tilt-container'
+        >
+          <img src={calls} className='img-tilt'></img>
+          <h3 className='h3-tilt'>a</h3>
+          
         </div>
-        <div className='gold-showcase-div reverse'>
-        <img className='gold-plan-img' src={goldContract}></img>
-          <span className='showcase-text'>90 Day Contract</span>
-        </div>
-        <div className='gold-showcase-div '>
-        <img className='gold-plan-img' src={fullAccess}></img>
-          <span className='showcase-text'>Full Access To Bronze <br/> and Silver Plans</span>
-        </div>
+
+      </motion.div>
+    </Tilt>
+
         <div className='gold-prices'>
           <span className='gold-prices-span'><b>1-1 Coaching Calls</b></span> <br/><span className='gold-prices-subtext'>Each one is normally 30$, you get one every other week. ($60/mo)</span><br/><br/>
           <span className='gold-prices-span'><b>Daily Chat Coaching</b></span> <br/><span className='gold-prices-subtext'>So powerful you wont't even need calls because of it ($99/mo)</span><br/><br/>
