@@ -1,36 +1,38 @@
 import React, { useEffect } from 'react'
 import "./landing-page-styles.css"
-import DefaultButton from '../../components/DefaultButton'
-import bronzeImg from "../../assets/plan-imgs/bronze.jpg"
-import silverImg from "../../assets/plan-imgs/silver.jpg"
-import goldImg from "../../assets/plan-imgs/gold.jpg"
-import LandingImg from "../../assets/landingimg.png"
 import {motion} from "framer-motion"
 import { Tilt } from 'react-tilt'
-import { importAllImages } from '../../utils';
-import image1 from "../../assets/plan-imgs/a.jpg"
-import image2 from "../../assets/plan-imgs/b.jpg"
-import image3 from "../../assets/plan-imgs/c.jpg"
-import image4 from "../../assets/plan-imgs/d.jpg"
-import image5 from "../../assets/plan-imgs/e.jpg"
-import image6 from "../../assets/plan-imgs/f.jpg"
-import image7 from "../../assets/plan-imgs/g.jpg"
-import image8 from "../../assets/plan-imgs/h.jpg"
 import callsImg from "../../assets/plan-imgs/calls.jpg"
 import calls from "../../assets/plan-imgs/calls.png"
-import gameplanImg from "../../assets/plan-imgs/gameplan.jpg"
+import arab from "../../assets/plan-imgs/arab.png"
 import tajweed from "../../assets/plan-imgs/tajweed.png"
-import foot1 from "../../assets/plan-imgs/foot-1.jpg"
-import foot2 from "../../assets/plan-imgs/foot-2.jpg"
-import foot3 from "../../assets/plan-imgs/foot-3.jpg"
-import foot4 from "../../assets/plan-imgs/foot-4.jpg"
-import footVideo from "../../assets/plan-imgs/foot-ivd.mp4"
-import footLion from "../../assets/plan-imgs/foot-lion.jpg"
+import islamcourse from "../../assets/plan-imgs/islamcourse.jpg"
+import allDay from "../../assets/plan-imgs/24-7.png"
 import navLogo from "../../assets/nav-logo.jpg"
 import {fadeIn} from "../../utils/motion"
 
 
 function LandingPage() {
+
+  const slideIn = (direction, type, delay, duration) => {
+    return {
+      hidden: {
+        x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
+        y: direction === "up" ? "100%" : direction === "down" ? "100%" : 0,
+      },
+      show: {
+        x: 0,
+        y: 0,
+        transition: {
+          type: type,
+          delay: delay,
+          duration: duration,
+          ease: "easeOut",
+        },
+      },
+    };
+  };
+
 
   const defaultOptions = {
     reverse:        false,  // reverse the tilt direction
@@ -62,23 +64,11 @@ useEffect(() => {
     });
   };
 
-  const redirectToBronze = function() {
-    window.location.href = "https://pool-stop-378.notion.site/Leo-s-Lion-Teamspace-e97e36de437547a3b2c0421992fb12df?pvs=4"
-  }
-
-  const redirectToPlan = function(route) {
-    window.location.href = `/${route}-plan`
-  }
-
-  const redirectToCourse = function() {
-    window.location.href = "/courses"
-  }
 
   const bronzeData = ["Access To Leo's Personal Tools, Templates & Checklists", "Access To Private Routine", "Leo's Self Improvement Habit Guides (Meditation, Visualization, Stretching...)"];
   const silverData = ["Access To ALL 8 OF LEO'S HIGH LEVEL COURSES:", "- Hunters Habits Course (50eur) ","- Mens Life Mastery Course (25eur) ","- Up Your Health Up Your Wealth Course (75eur) ","-Kings Social Skills Course (50$) ","-Unleash Your Killer Instinct Course (25$) ","- Learn To Lead The Pack Course (25$) ","-Full LooksMaxxing Course (50eur/$) ","- Hack The School System Course (75$)", "375 eur for 129? That's A Deal"];
   const goldData = ["Access To ALL 8 Courses (Silver Pack)", "Daily Texting And Communication (Whatsapp)", "Full Daily, Weekly & Monthly Personalized Step By Step Gameplan To Ensure Goal Achievement", "1h Onboarding & Planning Coaching Call, Checkup & Coaching Call Every Other Week"];
 
-  
   return (
     <>
     <div className='lp-wrapper'>
@@ -131,7 +121,8 @@ useEffect(() => {
       </Tilt>
           <span className='showcase-text blue-shadow'>Full tajweed (Correct Pronunciation) course</span>
         </div>
-    <Tilt className="xs:w-[250px] w-full">
+        <span className='advantages-span pre-tilt-span'>Plus</span><br/>
+    <Tilt className="tilt-div">
       <motion.div 
       variants={fadeIn("right", "spring", 0.5 * 1, 0.75)}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
@@ -144,53 +135,148 @@ useEffect(() => {
         }}
         className='tilt-container'
         >
+          
           <img src={calls} className='img-tilt'></img>
-          <h3 className='h3-tilt'>a</h3>
+          <h3 className='h3-tilt'>3x Sessions weekly <br/> (30m each)</h3>
           
         </div>
 
       </motion.div>
     </Tilt>
 
-        <div className='gold-prices'>
-          <span className='gold-prices-span'><b>1-1 Coaching Calls</b></span> <br/><span className='gold-prices-subtext'>Each one is normally 30$, you get one every other week. ($60/mo)</span><br/><br/>
-          <span className='gold-prices-span'><b>Daily Chat Coaching</b></span> <br/><span className='gold-prices-subtext'>So powerful you wont't even need calls because of it ($99/mo)</span><br/><br/>
-          <span className='gold-prices-span'><b>Personalized Goal-Oriented Day-by-Day Monthly Gameplan</b></span> <br/><span className='gold-prices-subtext'>Just follow it and see the results ($30/mo)</span><br/><br/>
-          <span><span className='gold-prices-end-span-no-bright'>$189 (gold) + $592 (silver included in gold) = </span><span className='gold-prices-end-span'>$774 FOR 299/mo!</span></span>
+    <span className='advantages-span'>Tier 2</span>
+    <div className='gold-showcase-div reverse'>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img arab-img' src={arab}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Full Arabic Course from Beginner - Advanced</span>
+        </div>
+        <div className='gold-showcase-div '>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img' src={callsImg}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Professional Quran lessons by knowledgeable Teachers</span>
+        </div>
+        <div className='gold-showcase-div reverse'>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img' src={tajweed}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Full tajweed (Correct Pronunciation) course</span>
+        </div>
+        <span className='advantages-span pre-tilt-span'>Plus</span><br/>
+
+    <Tilt className="tilt-div">
+      <motion.div 
+      variants={fadeIn("right", "spring", 0.5 * 1, 0.75)}
+      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      >
+        <div 
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+        className='tilt-container'
+        >
+          
+          <img src={calls} className='img-tilt'></img>
+          <h3 className='h3-tilt'>3x to 4x Sessions weekly<br/> (30m each)</h3>
+          
         </div>
 
+      </motion.div>
+    </Tilt>
+    <span className='advantages-span'>Tier 3</span>
+    <div className='gold-showcase-div'>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img arab-img' src={islamcourse}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Full Islamic Studies Course on Essentials of Islam</span>
+        </div>
+    <div className='gold-showcase-div reverse'>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img arab-img' src={arab}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Full Arabic Course from Beginner - Advanced</span>
+        </div>
+        <div className='gold-showcase-div '>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img' src={callsImg}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Professional Quran lessons by knowledgeable Teachers</span>
+        </div>
+        <div className='gold-showcase-div reverse'>
+        <Tilt options={defaultOptions} className="tilt-box">
+        <img className='gold-plan-img' src={tajweed}></img>
+      </Tilt>
+          <span className='showcase-text blue-shadow'>Full tajweed (Correct Pronunciation) course</span>
+        </div>
+        <span className='advantages-span pre-tilt-span'>Plus</span><br/>
+        <div className='tilt-wrap'>
+            <Tilt className="tilt-div">
+              <motion.div 
+              variants={fadeIn("right", "spring", 0.5 * 1, 0.75)}
+              className='w-full green-pink-gradient p-[1px] rounded-[20px] motion-div shadow-card'
+              >
+                <div 
+                options={{
+                  max: 45,
+                  scale: 1,
+                  speed: 450,
+                }}
+                className='tilt-container'
+                >
+                  
+                  <img src={calls} className='img-tilt'></img>
+                  <h3 className='h3-tilt'>3x to 4x Sessions weekly<br/> (30m each)</h3>
+                  
+                </div>
+
+              </motion.div>
+            </Tilt>
+            <Tilt className="tilt-div">
+              <motion.div 
+              variants={fadeIn("right", "spring", 0.5 * 1, 0.75)}
+              className='w-full green-pink-gradient p-[1px] rounded-[20px] motion-div shadow-card'
+              >
+                <div 
+                options={{
+                  max: 45,
+                  scale: 1,
+                  speed: 450,
+                }}
+                className='tilt-container'
+                >
+                  
+                  <img src={allDay} className='img-tilt'></img>
+                  <h3 className='h3-tilt'>Unlimited Resources<br/> & Question Support 24/7.</h3>
+
+                </div>
+
+              </motion.div>
+            </Tilt>
+        </div>    
+    
+        <button className='plan-btn gold-btn'>I want this!</button>
+
+
+
       </div>
-        <button className='plan-btn gold-btn' onClick={() => redirectToPlan("gold")}>See Plan</button>
       </div>
-      
-  <div className='foot-content-div'>
-    <img className='foot-img' src={foot1}></img>
-    <span className='foot-span'>DON'T JOIN <br/> & <br/> <span className='foot-span red'>DON'T IMPROVE</span></span>
-    <img className='foot-img-2' src={foot2}></img>
-  </div>
-  <div className='foot-content-div'>
-    <img className='foot-img-3' src={foot3}></img>
-    <span className='foot-span-2'>LIVE AN AVERAGE LIFE <br/> & <br/> <span className='foot-span-2 red'>LOSE YOUR FREEDOM</span></span>
-    <img className='foot-img-4' src={foot4}></img>
-  </div>
-  <div className='foot-content-div column'>
-  <video className='foot-vid' controls src={footVideo}></video>
-
-  <span className='foot-span-2'> <br/><span className='foot-span-2-gold OR-span'>OR</span> <br/><br/><br/><span className='join-me-size'>JOIN ME</span> <br/> & <br/> <span className='foot-span-2-gold'><span className='join-me-size'>NEVER</span><br/><br/> BE THE SAME AGAIN</span></span>
-  <img className='lion-img' src={footLion}></img>
-  <span className='refund-span'>100% FULL REFUND if you don't achieve your trimestral Goals & Not Happy with the Product (I know it won't happen that's why I'm betting on it)</span><br/><br/>
-  <span className='vid-span'>My Purpose:</span>
-  <span className='vid-span-white'>TO GUIDE YOUNG MEN INTO THE PATH<br/>I'M GOING THROUGH, TO ADD <br/> SUCCESSFUL BROTHERS INTO MY TRIBE</span>
-  </div>
-
-
-      <button style={{backgroundColor: "white"}} onClick={() => redirectToCourse()}>course</button> 
-      <div style={{ minWidth: '320px', height: '700px' }}>
-      <div className="calendly-inline-widget"
-      data-url="https://calendly.com/leo-matiano/coaching-fit-call"
-      style={{ minWidth: '320px', height: '700px' }}
-    />
-    </div>
+      <div className='contact-wrap'>
+      <motion.div
+        variants={slideIn("left", "tween", 0.2, 1)}
+      >
+        <div className='contact-container'>
+          <h2 className='contact-title'>Get in touch</h2>
+          <a href="https://twitter.com/amaaralmadani">
+          <svg xmlns="http://www.w3.org/2000/svg" className='contact-svg' viewBox="0 0 50 50" >
+  <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
+</svg>
+          </a>
+        </div>
+      </motion.div>
+      </div>
     </div>
 
    </>
