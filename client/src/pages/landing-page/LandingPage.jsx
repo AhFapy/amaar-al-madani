@@ -144,6 +144,9 @@ useEffect(() => {
       </motion.div>
     </Tilt>
 
+    <button className='plan-btn gold-btn'>I want this!</button>
+
+
     <span className='advantages-span'>Tier 2</span>
     <div className='gold-showcase-div reverse'>
         <Tilt options={defaultOptions} className="tilt-box">
@@ -186,6 +189,8 @@ useEffect(() => {
 
       </motion.div>
     </Tilt>
+    <button className='plan-btn gold-btn'>I want this!</button>
+
     <span className='advantages-span'>Tier 3</span>
     <div className='gold-showcase-div'>
         <Tilt options={defaultOptions} className="tilt-box">
